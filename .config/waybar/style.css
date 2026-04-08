@@ -1,4 +1,4 @@
-@import url("/home/nadun/.cache/wal/colors-waybar.css");
+@import url("/home/mwilly/.cache/wal/colors-waybar.css");
 
 * {
     border: none;
@@ -107,10 +107,10 @@ tooltip * {
 
 #pulseaudio {
     color: @color4;
+    border-radius: 10px 0 0 10px;
     border: 2px solid rgba(166, 173, 200, 0.3);
     border-right: 0;
-    border-left: 0;
-    padding: 0 5px;
+    padding: 0 5px 0 10px;
 }
 
 #battery {

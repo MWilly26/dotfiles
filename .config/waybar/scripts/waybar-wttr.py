@@ -62,8 +62,8 @@ data = {}
 MAX_RETRIES = 3
 BACKOFF = 30.0  
 
-city = "Anuradhapura"
-url = f"https://wttr.in/{city}?format=j1"
+city = "Morgantown,West+Virginia"
+url = f"https://wttr.in/{city}?format=j1&mT=F"
 
 for attempt in range(1, MAX_RETRIES + 1):
     try:
@@ -108,16 +108,16 @@ def format_chances(hour):
             conditions.append(chances[event]+" "+hour[event]+"%")
     return ", ".join(conditions)
 
-tempint = int(weather['current_condition'][0]['FeelsLikeC'])
+tempint = int(weather['current_condition'][0]['FeelsLikeF'])
 extrachar = ''
 if tempint > 0 and tempint < 10:
     extrachar = '+'
 
 
 data['text'] = ''+WEATHER_CODES[weather['current_condition'][0]['weatherCode']] + f" {tempint}°"
-data['tooltip'] = f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
-data['tooltip'] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°\n"
-data['tooltip'] += f"Wind: {weather['current_condition'][0]['windspeedKmph']}Km/h\n"
+data['tooltip'] = f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_F']}°</b>\n"
+data['tooltip'] += f"Feels like: {weather['current_condition'][0]['FeelsLikeF']}°\n"
+data['tooltip'] += f"Wind: {weather['current_condition'][0]['windspeedMiles']}mph\n"
 data['tooltip'] += f"Humidity: {weather['current_condition'][0]['humidity']}%\n"
 
 print(json.dumps(data))

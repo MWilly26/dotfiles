@@ -17,6 +17,8 @@
     "modules-right": [
         "mpris",
         "tray",
+        "network",
+        "bluetooth",
         "battery",
         "pulseaudio",
         "backlight",
@@ -48,8 +50,12 @@
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "format": "{name} {icon}",
+        "format": "{icon}",
         "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
             "active": " ",
             "default": " "
         },
@@ -148,7 +154,7 @@
         "format": "{icon} {volume}%",
         "tooltip": false,
         "format-muted": " Muted",
-        "on-click": "pamixer -t",
+        "on-click": "pavucontrol",
         "on-scroll-up": "pamixer -i 1",
         "on-scroll-down": "pamixer -d 1",
         "scroll-step": 1,
@@ -161,7 +167,7 @@
         }
     },
     "network": {
-        "interface": "wlp2s0",
+        "interface": "wlan0",
         "format": "{icon}   {essid}",
         "format-wifi": "󰤪   {essid} ({signalStrength}%)",
         "format-icons": {
@@ -175,14 +181,15 @@
         "max-length": 50,
         "tooltip": true,
         "tooltip-format": "{ifname}:{ipaddr} [{frequency}]",
-        "on-click": "/home/nadun/.config/rofi/control network"
+        "on-click": "/home/mwilly/.config/rofi/control network"
     },
     "bluetooth": {
         "format": "",
         "format-connected": "󰂱  {device_alias}",
         "format-disabled": "󰂲",
         "tooltip": true,
-        "tooltip-format": "{controller_alias}:{device_address}\n{device_alias}: {device_battery_percentage}%"
+        "tooltip-format": "{controller_alias}:{device_address}\n{device_alias}: {device_battery_percentage}%",
+        "on-click": "blueman-manager"
     },
     "custom/notification": {
       "tooltip": true,

@@ -81,11 +81,11 @@
         },
         {
           "label": "󰤨      WiFi",
-          "command": "/home/nadun/.config/swaync/connectivity wifi"
+          "command": "/home/mwilly/.config/swaync/connectivity wifi"
         },
         {
           "label": "󰂯  BT",
-          "command": "/home/nadun/.config/swaync/connectivity bluetooth"
+          "command": "/home/mwilly/.config/swaync/connectivity bluetooth"
         },
         {
           "label": " Clear",
